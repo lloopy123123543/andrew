@@ -86,11 +86,11 @@ function renderMap(map) {
 function MapSize(map){
     document.getElementById('map').style.backgroundColor = map.color;
     let mapSizeHeightMax = 680;
-    let mapSizeHeightMin = 780;
+    let mapSizeHeightMin = 280;
 
 
     let mapSizeWidthMax = 1080;
-    let mapSizeWidthMin = 800;
+    let mapSizeWidthMin = 300;
 
     map.height = Math.floor(Math.random() * (mapSizeHeightMax - mapSizeHeightMin)) + mapSizeHeightMin;
     map.width = Math.floor(Math.random() * (mapSizeWidthMax - mapSizeWidthMin)) + mapSizeWidthMin;
@@ -134,6 +134,104 @@ function spawnEneme(map, eneme) {
     return eneme;
 }
 
+function renderEneme2(eneme){
+    document.getElementById(eneme.id).style.top = eneme.y + 'px';
+    document.getElementById(eneme.id).style.left = eneme.x + 'px';
+    document.getElementById(eneme.id).style.width = eneme.width + 'px';
+    document.getElementById(eneme.id).style.height = eneme.height + 'px';
+    document.getElementById(eneme.id).style.transition = 'ease ' + eneme.trnstn + 's';
+    document.getElementById(eneme.id).style.backgroundColor = eneme.color;
+
+}
+
+function spawnEneme2(map, eneme2) {
+
+    let mapMinXE = map.x;
+    let mapMaxXE = map.x + map.width - eneme.width;
+     
+    let mapMinYE = map.y;
+    let mapMaxYE = map.y + map.height - eneme.height;
+
+    eneme2.x = Math.floor(Math.random() * (mapMinXE - mapMaxXE)) + mapMaxXE;
+    eneme2.y = Math.floor(Math.random() * (mapMinYE - mapMaxYE)) + mapMaxYE;
+    
+    return eneme2;
+}
+
+function renderEneme3(eneme){
+    document.getElementById(eneme.id).style.top = eneme.y + 'px';
+    document.getElementById(eneme.id).style.left = eneme.x + 'px';
+    document.getElementById(eneme.id).style.width = eneme.width + 'px';
+    document.getElementById(eneme.id).style.height = eneme.height + 'px';
+    document.getElementById(eneme.id).style.transition = 'ease ' + eneme.trnstn + 's';
+    document.getElementById(eneme.id).style.backgroundColor = eneme.color;
+
+}
+
+function spawnEneme3(map, eneme3) {
+
+    let mapMinXE = map.x;
+    let mapMaxXE = map.x + map.width - eneme.width;
+     
+    let mapMinYE = map.y;
+    let mapMaxYE = map.y + map.height - eneme.height;
+
+    eneme3.x = Math.floor(Math.random() * (mapMinXE - mapMaxXE)) + mapMaxXE;
+    eneme3.y = Math.floor(Math.random() * (mapMinYE - mapMaxYE)) + mapMaxYE;
+    
+    return eneme3;
+}
+
+
+
+
+function renderEneme5(eneme){
+    document.getElementById(eneme.id).style.top = eneme.y + 'px';
+    document.getElementById(eneme.id).style.left = eneme.x + 'px';
+    document.getElementById(eneme.id).style.width = eneme.width + 'px';
+    document.getElementById(eneme.id).style.height = eneme.height + 'px';
+    document.getElementById(eneme.id).style.transition = 'ease ' + eneme.trnstn + 's';
+    document.getElementById(eneme.id).style.backgroundColor = eneme.color;
+
+}
+
+function spawnEneme5(map, eneme5) {
+
+    let mapMinXE = map.x;
+    let mapMaxXE = map.x + map.width - eneme.width;
+     
+    let mapMinYE = map.y;
+    let mapMaxYE = map.y + map.height - eneme.height;
+
+    eneme5.x = Math.floor(Math.random() * (mapMinXE - mapMaxXE)) + mapMaxXE;
+    eneme5.y = Math.floor(Math.random() * (mapMinYE - mapMaxYE)) + mapMaxYE;
+    
+    return eneme5;
+}
+
+function renderEneme6(eneme){
+    document.getElementById(eneme.id).style.top = eneme.y + 'px';
+    document.getElementById(eneme.id).style.left = eneme.x + 'px';
+    document.getElementById(eneme.id).style.width = eneme.width + 'px';
+    document.getElementById(eneme.id).style.height = eneme.height + 'px';
+    document.getElementById(eneme.id).style.transition = 'ease ' + eneme.trnstn + 's';
+    document.getElementById(eneme.id).style.backgroundColor = eneme.color;
+
+}
+
+function spawnEneme6(map, eneme6) {
+
+    let mapMinXE = map.x;
+    let mapMaxXE = map.x + map.width - eneme.width;
+     
+    let mapMinYE = map.y;
+    let mapMaxYE = map.y + map.height - eneme.height;
+
+    eneme6.x = Math.floor(Math.random() * (mapMinXE - mapMaxXE)) + mapMaxXE;
+    eneme6.y = Math.floor(Math.random() * (mapMinYE - mapMaxYE)) + mapMaxYE;
+    
+    return eneme6;
+}
 
 
 
