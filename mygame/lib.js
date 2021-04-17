@@ -83,20 +83,7 @@ function renderMap(map) {
 }
 
 
-function MapSize(map){
-    document.getElementById('map').style.backgroundColor = map.color;
-    let mapSizeHeightMax = 680;
-    let mapSizeHeightMin = 280;
 
-
-    let mapSizeWidthMax = 1080;
-    let mapSizeWidthMin = 300;
-
-    map.height = Math.floor(Math.random() * (mapSizeHeightMax - mapSizeHeightMin)) + mapSizeHeightMin;
-    map.width = Math.floor(Math.random() * (mapSizeWidthMax - mapSizeWidthMin)) + mapSizeWidthMin;
-    renderMap(map)
-     
-}
 function spawnCube(map, cube) {
 
     let mapMinX = map.x;
@@ -231,6 +218,49 @@ function spawnEneme6(map, eneme6) {
     eneme6.y = Math.floor(Math.random() * (mapMinYE - mapMaxYE)) + mapMaxYE;
     
     return eneme6;
+}
+
+function renderBots(bots) {
+    bots.map(bot =>{
+        let div = document.createElement('div');
+        div.id = 'bot_' + bot.id;
+        div.className = 'bot';
+        document.body.append(div);
+        renderBot(bot);
+    });
+}
+function renderBot(bot){
+    document.getElementById('bot_' + bot.id).style.top = bot.y + 'px';
+    document.getElementById('bot_' + bot.id).style.left = bot.x + 'px';
+    document.getElementById('bot_' + bot.id).style.width = bot.width + 'px';
+    document.getElementById('bot_' + bot.id).style.height = bot.height + 'px';
+    document.getElementById('bot_' + bot.id).style.transition = 'ease ' + bot.trnstn + 's';
+    document.getElementById('bot_' + bot.id).style.backgroundColor = bot.color;
+
+}
+
+function renderBuffs(buffs) {
+    buffs.map(buff =>{
+        let div = document.createElement('div');
+        div.id = 'buff_' + buff.id;
+        div.className = 'buff';
+        document.body.append(div);
+        renderBuff(buff);
+    });
+}
+function renderBuff(buff){
+    document.getElementById('buff_' + buff.id).style.top = buff.y + 'px';
+    document.getElementById('buff_' + buff.id).style.left = buff.x + 'px';
+    document.getElementById('buff_' + buff.id).style.width = buff.width + 'px';
+    document.getElementById('buff_' + buff.id).style.height = buff.height + 'px';
+    document.getElementById('buff_' + buff.id).style.transition = 'ease ' + buff.trnstn + 's';
+    document.getElementById('buff_' + buff.id).style.backgroundColor = buff.color;
+
+}
+
+function timeTike() {
+    console.log(new Date().getSeconds());
+
 }
 
 
